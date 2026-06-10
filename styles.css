@@ -1,0 +1,250 @@
+/* Reset básico e fontes nostálgicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "MS Sans Serif", "Courier New", Tahoma, sans-serif;
+}
+
+body {
+    background-color: #008080; /* O clássico verde-azulado do Windows 95 */
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+/* Estilo de Botão do Windows 95 (Efeito 3D chanfrado) */
+.win-btn {
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.win-btn:active {
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.sm-btn {
+    padding: 2px 5px;
+    font-size: 10px;
+}
+
+/* Caixa padrão estilo janela */
+.win-box {
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.win-box h2, .win-box h3 {
+    font-size: 14px;
+    background: linear-gradient(90deg, #000080, #1084d0); /* Barra azul clássica */
+    color: white;
+    padding: 3px 6px;
+    margin-bottom: 10px;
+}
+
+/* Barra de Cabeçalho */
+.win-header {
+    background: #c0c0c0;
+    border: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#search-input {
+    padding: 4px;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    background: #fff;
+    outline: none;
+}
+
+.win-controls span {
+    background: #c0c0c0;
+    border: 1px solid #fff;
+    padding: 1px 5px;
+    margin-left: 2px;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Layout Principal */
+.main-container {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    overflow: hidden;
+    margin-bottom: 70px; /* Espaço para o player fixo */
+}
+
+.sidebar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Listas e Itens */
+ul {
+    list-style: none;
+}
+
+.playlist-list li, .fav-list li {
+    padding: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.playlist-list li:hover, .fav-list li:hover {
+    background: #000080;
+    color: white;
+}
+
+.action-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Grid de Bandas */
+.grid-bandas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+}
+
+.banda-card {
+    background: #d9d9d9;
+    border: 1px solid #808080;
+    padding: 8px;
+    text-align: center;
+}
+
+.banda-foto {
+    font-size: 30px;
+    background: #fff;
+    border: 2px solid #808080;
+    margin-bottom: 5px;
+    padding: 10px 0;
+}
+
+.banda-card h4 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+/* Tabela de Músicas */
+.win-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 12px;
+}
+
+.win-table th {
+    background: #d9d9d9;
+    border: 1px solid #808080;
+    padding: 5px;
+    text-align: left;
+}
+
+.win-table td {
+    border: 1px solid #e0e0e0;
+    padding: 6px;
+}
+
+.win-table tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+/* Player estilo Winamp (Rodapé Fixo) */
+.win-player {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: #222; /* Preto/Cinza escuro estilo Winamp */
+    border: 3px double #808080;
+    color: #00ff00; /* Letras verdes neon digitais */
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.track-info {
+    width: 30%;
+    background: #000;
+    padding: 5px;
+    border: 1px solid #333;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Efeito de texto correndo */
+.marquee {
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.player-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.ctrl-btn {
+    background: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+.volume-container {
+    color: #fff;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.win-slider {
+    accent-color: #00ff00;
+    cursor: pointer;
+}
